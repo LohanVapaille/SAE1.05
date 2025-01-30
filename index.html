@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sélection musicale</title>
+    <link href="style.css" rel="stylesheet">
+
+    <link rel="icon" href="img/disque.png" type="image/png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <h1>Mon univers musical</h1>
+        <div class="paragraphe-accueil">
+            <p>Cette page a été créée dans le cadre d'une situation d'apprentissage et d'évaluation en BUT MMI. Vous y
+                retrouverez ma sélection musicale de rap/hip-hop moderne.</p>
+        </div>
+    </header>
+
+    <main>
+        <!-- Liste des musiques -->
+        <div class="liste-musiques"></div>
+
+        <!-- Formulaire d'ajout de musique -->
+        <div class="formulaire">
+            <form id="form-musique">
+                <label for="email">Votre Email*</label><br>
+                <input type="email" id="email" name="email" placeholder="exemple.test@email.com" required title="L'email doit être valide"><br><br>
+
+                <label for="titre">Titre de votre musique*</label><br>
+                <input type="text" id="titre" name="titre" placeholder="Écrivez le titre ici" required><br><br>
+
+                <label for="description">Description de la musique :*</label><br>
+                <input type="text" id="description" name="description" placeholder="J'adore cette musique car..." required><br><br>
+
+                <label for="audioUrl">URL du fichier audio :*</label><br>
+                <input type="url" id="audioUrl" name="audioUrl" placeholder="https://votreaudio.mp3" required title="Format à suivre : https://votreaudio.mp3"><br><br>
+
+                <label for="imageUrl">URL de l'image :*</label><br>
+                <input type="url" id="imageUrl" name="imageUrl" placeholder="https://votreimage.jpg/png" required  title="Format à suivre : https://votreimage.jpg ou .png"><br><br>
+
+                <button type="submit">Envoyer</button>
+            </form>
+        </div>
+
+        <!-- Réponse après soumission DU FORMULAIRE -->
+        <div class="reponse">
+            <div class="reponse-formulaire"></div>
+        </div>
+    </main>
+
+    <footer>
+        <p class="footer-nav-left" onclick="showModal('confidentialiteModal')">Politique de confidentialité</p>
+        <p class="footer-nav-center" onclick="showModal('mentionsModal')">Mentions légales</p>
+        <p>Créé par Lohan Vapaille</p>
+    </footer>
+
+    <!-- Overlay -->
+    <div class="overlay" id="overlay" onclick="closeModal()"></div>
+
+    <!-- Modals -->
+    <div class="modal" id="mentionsModal">
+        <div class="modal-header">
+            <h2>Mentions légales</h2>
+            <span class="modal-close" onclick="closeModal()">×</span>
+        </div>
+        <div class="modal-content">
+            <p><strong>Propriétaire du site :</strong><br> Lohan Vapaille<br>Email : lohanvapaille@gmail.com</p>
+            <p><strong>Hébergement :</strong><br> Université Gustave Eiffel</p>
+            <p><strong>Propriété intellectuelle :</strong><br> Les contenus présents sur ce site sont utilisés à des fins éducatives et informatives.</p>
+            <p><strong>Utilisation des plateformes tierces :</strong><br>Ce site utilise des liens vers la plateforme Spotify. Nous ne sommes pas responsables des contenus ou des politiques de confidentialité de cette plateforme. Nous vous recommandons de consulter les conditions d'utilisation et les politiques de confidentialité de cette plateforme avant de l'utiliser.
+            </p>
+            <p><strong>Protection des données personnelles :</strong><br>Les informations recueillies sur ce site sont enregistrées dans un fichier informatisé par l'Université Gustave Eiffel . Elles sont conservées pendant une courte durée et sont destinées à des projets étudiants. Conformément à la loi « informatique et libertés », vous pouvez exercer votre droit d'accès aux données vous concernant et les faire rectifier en contactant : Lohan Vapaille, lohanvapaille@gmail.com
+            </p>
+        </div>
+    </div>
+
+    <div class="modal" id="confidentialiteModal">
+        <div class="modal-header">
+            <h2>Politique de confidentialité</h2>
+            <span class="modal-close" onclick="closeModal()">×</span>
+        </div>
+        <div class="modal-content">
+            <p><strong>Introduction :</strong><br> Nous protégeons vos données personnelles.</p>
+
+            <p><strong>Données collectées :</strong><br> Informations de contact et autres données fournies volontairement.</p>
+
+            <p><strong>Utilisation des données :</strong><br> Pour améliorer nos services et personnaliser votre expérience.</p>
+
+            <p><strong>Vos droits</strong><br>Conformément à la législation en vigueur, vous disposez des droits suivants : Droit d'accès à vos données personnelles, Droit de rectification de vos données, Droit à l'effacement de vos données, Droit à la limitation du traitement de vos données, Droit à la portabilité de vos données, Droit d'opposition au traitement de vos données.<br>Pour exercer ces droits, vous pouvez nous contacter à l'adresse suivante : lohanvapaille@gmail.com</p>
+
+            <p><strong>Modifications de la politique de confidentialité : </strong><br>Nous nous réservons le droit de modifier cette politique de confidentialité à tout moment. Les modifications seront publiées sur cette page.</p>
+
+            <p><strong>Contact : </strong><br>Pour toute question concernant cette politique de confidentialité, vous pouvez nous contacter à l'adresse suivante : lohanvapaille@gmail.com</p>
+        </div>
+    </div>
+
+    <script>
+        function showModal(modalId) {
+            document.getElementById(modalId).style.display = 'block';
+            document.getElementById('overlay').style.display = 'block';
+        }
+
+        function closeModal() {                                          // aide exterieur pour ce script :  raison pour laquelle je l'ai mis dans une autre balise <script> à part
+            document.querySelectorAll('.modal').forEach(modal => {
+                modal.style.display = 'none';
+            });
+            document.getElementById('overlay').style.display = 'none';
+        }
+    </script>                                                                           
+
+
+    <script>
+        document.getElementById('form-musique').addEventListener("submit", function (event) { //se déclanche une fois que le formulaire est correctement rempli et soumis par l'utilisateur. Si on met l'venement "click", alors ça ne prenait pas en compte les éléments "required"
+            event.preventDefault();
+
+            // Récupérer les valeurs des champs
+            const email = document.getElementById('email').value.trim();
+            const titre = document.getElementById('titre').value.trim();
+            const description = document.getElementById('description').value.trim();
+            const audioUrl = document.getElementById('audioUrl').value.trim();
+            const imageUrl = document.getElementById('imageUrl').value.trim();
+
+            const url = `https://perso-etudiant.u-pem.fr/~gambette/portrait/api.php?login=vapaille&courriel=${encodeURIComponent(email)}&titre=${encodeURIComponent(titre)}&description=${encodeURIComponent(description)}&audioUrl=${encodeURIComponent(audioUrl)}&imageUrl=${encodeURIComponent(imageUrl)}&message=${encodeURIComponent(description)}&format=json`; 
+
+            console.log("URL de l'API : ", url); //vérification
+
+            fetch(url)
+                .then(response => response.json())              //charger les donnée en établissant le lien entre l'url et le js
+                .then(data => {
+                    if (data.status === 'success') {            //création de la rubrique comprenant les éléments du formulaire rempli par l'utilisateur
+                        const nouvelleRubrique = `                 
+                            <div class="rubrique">
+                                <img class="img-reponse" src="${imageUrl}" alt="Image de ${titre}" />
+                                <div class="content">
+                                    <h2>${titre}</h2>
+                                    <p>${description}</p>
+                                    <audio class="audio-reponse" controls src="${audioUrl}"></audio>
+                                </div>
+                            </div>
+                        `;
+                        document.querySelector('.reponse-formulaire').innerHTML += nouvelleRubrique; //ajout de la div
+
+                        document.getElementById('form-musique').reset(); //reinitialisation du contenu de la div pour pouvoir en créer une autre
+                    } else {
+                        console.error("Erreur : ", data.message); // le systeme de verification de condition "if et else" m'a permi d'identifier les problème en cas d'erreur.
+                    }
+                })
+                
+        });
+                // ------------Ajout des sections HTML pour les musiques-------------------//
+
+        const listeMusique = document.querySelector(".liste-musiques");
+
+        // Charger les données JSON
+        fetch('musiques.json').then(function (response) {
+            response.json().then(function (data) {
+                
+                data.forEach(function (musique, numCase) {           //création d'une section html à partir des données JSON pour chaque musique (NumCase est un indice).
+                    const sectionHTML = `
+                        <section class="section${numCase}">
+                            <div class="onemusique">
+                                <img src="${musique.img}" alt="${musique.musique}">
+                                <div class="right">
+                                    <h2>${musique.musique}</h2>
+                                    <p class="description">${musique.descriptionMusicale}</p>
+                                    <audio id="audio-${numCase}" src="${musique.lien}" preload="none"></audio>
+                                    <button class="button" numCase="${numCase}">⏵</button>
+                                    <p class="date">Issue de l'album <a href="${musique.lienAlbum}" target="_blank">${musique.album}</a> | ${musique.date}</p>
+                                </div>
+                            </div>
+                        </section>
+                    `;
+                    listeMusique.innerHTML += sectionHTML; // ajout de la section créer à la div HTML nommée listeMusique
+                });
+
+
+                // ------------Gestion de la lecture/pause des boutons-------------------//
+                const boutons = document.querySelectorAll(".button");
+                boutons.forEach(function (button) {
+                    const numCase = button.getAttribute("numCase");
+                    const audio = document.getElementById(`audio-${numCase}`);
+
+                    button.addEventListener("click", function () {
+                        if (audio.paused) {
+                            const audios = document.querySelectorAll("audio");
+                            audios.forEach(function (a) {
+                                a.pause();
+                            });
+
+                            boutons.forEach(function (b) {
+                                b.textContent = "⏵";
+                            });
+
+                            audio.play();
+                            button.textContent = "⏸";
+                        } else {
+                            audio.pause();
+                            button.textContent = "⏵";
+                        }
+                    });
+
+                    audio.addEventListener("ended", function () {
+                        button.textContent = "⏵";
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

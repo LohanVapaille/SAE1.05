@@ -1,0 +1,393 @@
+/* Initialisation */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Nunito", Arial, sans-serif, serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    /* 400 pour normal, ajuste selon les besoins */
+    font-style: normal;
+
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    min-width: 1024px;
+    background-color: black;
+
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+}
+
+header {
+
+
+    height: 100vh;
+    display: flex;
+    background-image: url("img/background-accueil.jpg");
+    color: #FFF;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    /* Ombre */
+
+}
+
+header h1 {
+    width: 1000px;
+    height: 50px;
+    font-size: 2.7rem;
+    margin-left: 200px;
+    float: left;
+    margin-top: 400px;
+}
+
+.paragraphe-accueil {
+    display: flex;
+    position: relative;
+    font-size: 1.3rem;
+
+}
+
+.paragraphe-accueil p {
+
+    margin-left: -1100px;
+    margin-top: 500px;
+    width: 600px;
+    text-align: center;
+    color: rgb(255, 255, 255);
+}
+
+
+
+.liste-musiques {
+    color: white;
+
+}
+
+.section0,
+.section1,
+.section2,
+.section3,
+.section4 {
+    display: flex;
+    justify-content: center;  /* Centre horizontalement le contenu */
+    align-items: center; /* Centre verticalement le contenu */
+    width: 100vw;
+    height: 100vh;
+    box-sizing: border-box;
+}
+
+.section0,
+.section1,
+.section2,
+.section3,
+.section4,
+.formulaire,
+header,
+.reponse {
+
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+/* Couleurs/Images de fond différentes pour chaque section */
+.section0 {
+    background-image: url("img/background.jpg");
+
+}
+
+.section1 {
+    background-image: url("img/background2.jpg");
+
+}
+
+.section2 {
+    background-image: url("img/background3.jpg");
+}
+
+.section3 {
+    background-image: url("img/background4.jpg");
+}
+
+.section4 {
+    background-image: url("img/background5.jpg");
+}
+
+
+/* Div onemusique */
+.onemusique {
+    height: 80%;
+    width: 80%;
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);    /* Ombre */
+
+}
+
+.onemusique img,
+.rubrique img {
+    margin-right: 40px;
+    margin-left: 40px;
+    max-width: 300px;
+    /* Taille maximale de l'image */
+    border-radius: 10px;
+    /* Arrondi des images */
+    width: 300px;
+    float: left;
+
+}
+
+
+
+.onemusique:hover {
+
+    transform: scale(1.1); /* Agrandit la div de 10% */
+    background-color: rgba(0, 0, 0, 0.3);
+
+
+}
+
+.date a {
+
+    text-decoration: none;
+    color: rgb(244, 8, 8);
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+
+.date a:hover {
+
+    text-decoration: underline;
+}
+
+
+audio {
+    display: none; /* Enleve l'interface de base des audios*/
+}
+
+button {
+    background-color: transparent;
+    border: 2px solid white;
+    color: #FFF;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;    /* Curseur "pointer" pour indiquer que c'est cliquable */
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+button:hover {
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);                     /* Changement d'apparence lorsque l'on passe dessus */
+    
+}
+
+.description {
+
+    width: 85%;
+    color: rgb(255, 255, 255);
+
+}
+
+/* Formulaire */
+
+.formulaire {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+
+    background-image: url("img/background4.jpg");
+}
+
+form {
+
+    max-height: 100vh;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding-right: 50px;
+    padding-left: 50px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-radius: 10px;
+
+}
+
+form:hover {
+    transform: scale(1.06);
+    ;
+    background-color: rgba(133, 131, 131, 0.3);
+
+}
+label{
+
+    color: white;
+    font-size: 18px;
+}
+
+input {
+    border: 2px solid #141212;
+    border-radius: 10px;
+    padding: 8px;
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    width: 250px;
+    height: 40px;
+    font-size: 16px;
+}
+
+/* Champ valide */
+input:valid {
+    border-color: green;
+    box-shadow: 0 0 5px green;
+}
+
+/* Champ invalide après saisie */
+input:invalid:not(:placeholder-shown) {
+    /*Assure que le style ne se déclenche que si l'utilisateur a commencé à remplir le champ et qu'il est invalide. Sans ça, l'input était invalide par défault. */
+    border-color: red;
+    box-shadow: 0 0 5px red;
+}
+
+
+.audio-reponse {
+
+    display: block;
+}
+
+
+.reponse {
+
+    background-image: url("img/background5.jpg");
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.rubrique {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #d0c8c8;
+    padding: 20px;
+    border-radius: 10px;
+    width: 400px;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.rubrique img {
+
+    width: 100%;
+    border-radius: 10px;
+}
+
+.rubrique .content {
+
+    text-align: center;
+    margin-top: 10px;
+    color: black;
+    max-width: 300px;
+    margin: 0px;
+}
+
+.rubrique audio {
+
+    margin-top: 20px;
+}
+
+
+/* footer*/
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #222;
+    color: white;
+    font-size: 0.9rem;
+}
+
+.footer-nav-left,
+.footer-nav-center {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.footer-nav-left:hover,
+.footer-nav-center:hover {
+    color: #ffd700;
+}
+
+/* styles du Modal*/
+.modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    width: 80%;
+    max-width: 600px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    overflow: auto;
+    max-height: 80%;
+}
+
+.modal-header {
+    padding: 10px;
+    background-color: #222;
+    color: white;
+    text-align: center;
+}
+
+.modal-content {
+    padding: 20px;
+    line-height: 1.6;
+    color: #333;
+}
+
+.modal-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.modal-close:hover {
+    color: red;
+}
+
+/* Overlay */
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 200;
+}
+
+
+

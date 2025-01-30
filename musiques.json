@@ -1,0 +1,48 @@
+[
+    {
+      "musique": "Tout s'en va | Luv Resval",
+      "descriptionMusicale": "Cette musique est le chef-d'oeuvre de Luv Resval, un artiste connu pour son écriture riche et ses placements uniques. Cette musique contient un message qui met en avant le caractère éphémère du temps. Luv Resval nous emmène dans son univers fantaisiste et nous déconnecte de la réalité le temps d'un instant. J'adore cette musique, elle permet de s'évader dans un monde parallèle décrit par l'artiste.",
+      "lien": "audio/toutsenva.mp3",
+      "img": "img/luvresval.jpg",
+      "date" : "2021",
+      "album":"Étoile Noire",
+      "lienAlbum":"https://open.spotify.com/intl-fr/album/656DP8kmQ5EDe6cPkhIkSb"
+    },
+    {
+      "musique": "i | Lil Skies",
+      "descriptionMusicale":"L'une des musiques les plus connues de Lil Skies, une chanson mélancolique dans laquelle il se livre sur son passé. Le refrain est touchant et très bien écrit. À travers ses paroles, on comprend qu'il a perdu des êtres chers et que certains événements l'ont changé à tout jamais. Cette musique m'a profondément touché et illustre de manière poignante ces émotions.",
+      "lien": "audio/i.mp3",
+      "img": "img/lilskies.jpg",
+      "date" : "2019",
+      "album":"Shelby",
+      "lienAlbum":"https://open.spotify.com/intl-fr/album/47FalEKu0of8GExDtZBkxT"
+    },
+    {
+      "musique": "BAD TIME | Lil Tecca",
+      "descriptionMusicale": "Une musique extraite de son dernier album, joyeuse et accompagnée d'une mélodie très envoûtante. C'est l'une de mes musiques préférées et elle a été en tête de celles que j'ai le plus écoutées pendant l'année 2024. C'est une musique parfaite pour les vacances, qui s'accorde parfaitement avec l'ambiance estivale. Le clip renforce et accentue cette atmosphère chill et joyeuse.",
+      "lien": "audio/badtime.mp3",
+      "img": "img/liltecca.jpg",
+      "date" : "2024",
+      "album":"PLAN A",
+      "lienAlbum":"https://open.spotify.com/intl-fr/album/6uWva3kfeqqVIsNAJ2MmeL"
+    },
+    {
+      "musique": "oseille mon amour | Green Montana",
+      "descriptionMusicale": "Extraite de l'album Saudade de Green Montana, cette musique nous plonge dans une ambiance calme et paisible, avec des sonorités agréables et une voix douce. J'ai choisi cette musique, car j'adore cet artiste. Il a une identité vocale et musicale unique, qui le rend reconnaissable en toutes circonstances. Cette musique représente parfaitement son atmosphère.",
+      "lien": "audio/oseillemonamour.mp3",
+      "img": "img/greenmontana.jpg",
+      "date" : "2024",
+      "album":"SAUDADE",
+      "lienAlbum":"https://open.spotify.com/intl-fr/album/5ORwfRIZBQiJ1dQ2cQDIFO"
+    },
+    {
+      "musique": "DEEP IN THE WATER | Don Toliver",
+      "descriptionMusicale": "Don Toliver est un artiste américain très populaire. Sa voix puissante et mélodieuse fait de ce titre l'un des meilleurs de sa discographie. Le clip qui accompagne cette musique nous plonge dans son univers luxueux de biker, mêlant esthétique futuriste et scènes cinématographiques. Chaque détail, des costumes aux décors, reflète son style unique et audacieux, offrant une expérience visuelle aussi marquante que la musique elle-même.",
+      "lien": "audio/deepinwater.mp3",
+      "img": "img/dontoliver.jpg",
+      "date" : "2024",
+      "album":"HARDSTONE PSYCHO",
+      "lienAlbum":"https://open.spotify.com/intl-fr/album/0Kzb3u6kMnOJOZXYFSk33F"
+    }
+  ]
+  
