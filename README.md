@@ -7,3 +7,4 @@
  - Création de bouton pour lancer des musiques
  - Respect de certaines conventions Opquast
  
+Le code javascript est contenu dans une balise <script> à l'interieur du fichier HTML
